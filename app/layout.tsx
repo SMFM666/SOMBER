@@ -20,7 +20,6 @@ export const metadata: Metadata = {
     description: "Small runs. Original graphics. No restocks.",
     images: [
       { url: "/og.gif", width: 1200, height: 630, alt: "Animated SOMBER identity and apparel archive", type: "image/gif" },
-      { url: "/og.png", width: 1200, height: 630, alt: "SOMBER independent apparel", type: "image/png" },
     ],
   },
   twitter: {
