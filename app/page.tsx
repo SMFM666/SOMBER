@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import ArchiveSlider from "./ArchiveSlider";
 
 type Product = {
   id: string;
@@ -189,23 +190,15 @@ export default function Home() {
       </section>
 
       <section className="archive-section" id="archive">
-        <a className="archive-gateway" href="/archive" aria-label="Open the SOMBER archive">
+        <div className="archive-gateway">
           <div className="archive-gateway-copy">
             <p className="eyebrow">Past releases / Permanent record</p>
             <h2>The archive</h2>
-            <p>Enter the complete record <span>↗</span></p>
+            <a href="/archive">Enter the complete record <span>↗</span></a>
           </div>
-          <div className="archive-stage" aria-hidden="true">
-            <div className="archive-slider">
-              <figure className="archive-slide slide-1"><Image src="/media/traitor-front.png" alt="" fill sizes="28vw" /></figure>
-              <figure className="archive-slide slide-2"><Image src="/media/traitor-back.png" alt="" fill sizes="28vw" /></figure>
-              <figure className="archive-slide slide-3"><Image src="/media/buried-front.png" alt="" fill sizes="28vw" /></figure>
-              <figure className="archive-slide slide-4"><Image src="/media/buried-back.png" alt="" fill sizes="28vw" /></figure>
-              <figure className="archive-slide slide-5"><Image src="/media/traitor-alt.png" alt="" fill sizes="28vw" /></figure>
-            </div>
-          </div>
+          <ArchiveSlider />
           <span className="archive-counter">02 stored drops</span>
-        </a>
+        </div>
       </section>
 
       <section className="manifesto" id="manifesto">
