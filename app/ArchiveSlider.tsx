@@ -4,7 +4,6 @@ import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { Splide } from "@splidejs/splide";
 import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
-import "@splidejs/splide/css/core";
 
 const slides = [
   { src: "/media/traitor-front.png", label: "Traitor / Front" },
