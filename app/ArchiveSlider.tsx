@@ -11,6 +11,10 @@ const slides = [
   { src: "/media/buried-front.png", label: "Buried / Front" },
   { src: "/media/buried-back.png", label: "Buried / Back" },
   { src: "/media/traitor-alt.png", label: "Traitor / Detail" },
+  { src: null, label: "Unassigned / 003" },
+  { src: null, label: "Unassigned / 004" },
+  { src: null, label: "Unassigned / 005" },
+  { src: null, label: "Unassigned / 006" },
 ];
 
 export default function ArchiveSlider() {
@@ -25,7 +29,7 @@ export default function ArchiveSlider() {
       focus: "center",
       drag: "free",
       snap: false,
-      gap: "clamp(10px, 1.5vw, 24px)",
+      gap: "0px",
       arrows: false,
       pagination: false,
       wheel: true,
@@ -34,13 +38,45 @@ export default function ArchiveSlider() {
       waitForTransition: false,
       autoScroll: {
         speed: 0.45,
-        pauseOnHover: true,
+        pauseOnHover: false,
         pauseOnFocus: true,
       },
     });
 
     splide.mount({ AutoScroll });
+
+    const root = rootRef.current;
+    let lastSpeed = 0.45;
+
+    const setSpeed = (speed: number) => {
+      if (Math.abs(speed - lastSpeed) < 0.08) return;
+      lastSpeed = speed;
+      splide.options = {
+        autoScroll: {
+          speed,
+          pauseOnHover: false,
+          pauseOnFocus: true,
+        },
+      };
+    };
+
+    const steer = (event: PointerEvent) => {
+      if (event.pointerType === "touch") return;
+      const bounds = root.getBoundingClientRect();
+      const position = (event.clientX - bounds.left) / bounds.width;
+      const distanceFromCenter = Math.abs(position - 0.5) * 2;
+      if (distanceFromCenter < 0.08) return setSpeed(0.12);
+      const magnitude = 0.35 + distanceFromCenter * 1.1;
+      setSpeed(position < 0.5 ? -magnitude : magnitude);
+    };
+
+    const resetDirection = () => setSpeed(0.45);
+    root.addEventListener("pointermove", steer);
+    root.addEventListener("pointerleave", resetDirection);
+
     return () => {
+      root.removeEventListener("pointermove", steer);
+      root.removeEventListener("pointerleave", resetDirection);
       splide.destroy();
     };
   }, []);
@@ -49,10 +85,14 @@ export default function ArchiveSlider() {
     <section className="splide archive-splide" ref={rootRef} aria-label="Archived release previews">
       <div className="splide__track">
         <ul className="splide__list">
-          {slides.map((slide) => (
-            <li className="splide__slide" key={slide.src}>
+          {slides.map((slide, index) => (
+            <li className={`splide__slide${slide.src ? "" : " is-empty"}`} key={`${slide.label}-${index}`}>
               <a className="archive-panel" href="/archive">
-                <Image src={slide.src} alt={slide.label} fill sizes="(max-width: 700px) 72vw, 30vw" />
+                {slide.src ? (
+                  <Image src={slide.src} alt={slide.label} fill sizes="(max-width: 700px) 72vw, 30vw" />
+                ) : (
+                  <span className="empty-panel-mark" aria-hidden="true">+</span>
+                )}
                 <span>{slide.label}</span>
               </a>
             </li>
