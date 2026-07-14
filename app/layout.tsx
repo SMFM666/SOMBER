@@ -13,11 +13,22 @@ export const metadata: Metadata = {
   description: "Small-run independent apparel. Original graphics, limited releases, no restocks.",
   icons: { icon: "/media/icon.png", shortcut: "/media/icon.png" },
   openGraph: {
-    title: "SOMBER / Drop 001: Correction",
-    description: "Limited to 50. No restock.",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "SOMBER Drop 001 Correction" }],
+    type: "website",
+    url: "https://somber-made.com/",
+    siteName: "SOMBER",
+    title: "SOMBER / Independent Apparel",
+    description: "Small runs. Original graphics. No restocks.",
+    images: [
+      { url: "/og.gif", width: 1200, height: 630, alt: "Animated SOMBER identity and apparel archive", type: "image/gif" },
+      { url: "/og.png", width: 1200, height: 630, alt: "SOMBER independent apparel", type: "image/png" },
+    ],
   },
-  twitter: { card: "summary_large_image", images: ["/og.png"] },
+  twitter: {
+    card: "summary_large_image",
+    title: "SOMBER / Independent Apparel",
+    description: "Small runs. Original graphics. No restocks.",
+    images: ["/og.png"],
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
