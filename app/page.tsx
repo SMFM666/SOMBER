@@ -127,15 +127,6 @@ export default function Home() {
       </header>
 
       <section className="hero" id="top">
-        <Image
-          className="hero-image"
-          src="/media/ad-001.png"
-          alt="Correction drop 001 cream tee with red artwork"
-          fill
-          sizes="100vw"
-          priority
-        />
-        <div className="hero-shade" />
         <div className="hero-copy">
           <p className="eyebrow">Independent apparel / Drop 001</p>
           <h1>SOMBER</h1>
@@ -198,28 +189,23 @@ export default function Home() {
       </section>
 
       <section className="archive-section" id="archive">
-        <div className="section-heading row-heading">
-          <div>
-            <p className="eyebrow">Past releases</p>
+        <a className="archive-gateway" href="/archive" aria-label="Open the SOMBER archive">
+          <div className="archive-gateway-copy">
+            <p className="eyebrow">Past releases / Permanent record</p>
             <h2>The archive</h2>
+            <p>Enter the complete record <span>↗</span></p>
           </div>
-          <p>Evidence of what was here. Sold-out pieces remain visible, never reproduced.</p>
-        </div>
-        <div className="product-grid">
-          {products.slice(1).map((product) => (
-            <article className="product-card" key={product.id}>
-              <div className={`product-media ${product.tone}`}>
-                <Image className="front" src={product.front} alt={`${product.name} front`} fill sizes="(max-width: 700px) 100vw, 50vw" />
-                <Image className="back" src={product.back} alt={`${product.name} back`} fill sizes="(max-width: 700px) 100vw, 50vw" />
-                <span className="sold-out">Sold out</span>
-              </div>
-              <div className="product-meta">
-                <div><h3>{product.name}</h3><p>{product.edition}</p></div>
-                <p>${product.price.toFixed(2)}</p>
-              </div>
-            </article>
-          ))}
-        </div>
+          <div className="archive-stage" aria-hidden="true">
+            <div className="archive-slider">
+              <figure className="archive-slide slide-1"><Image src="/media/traitor-front.png" alt="" fill sizes="28vw" /></figure>
+              <figure className="archive-slide slide-2"><Image src="/media/traitor-back.png" alt="" fill sizes="28vw" /></figure>
+              <figure className="archive-slide slide-3"><Image src="/media/buried-front.png" alt="" fill sizes="28vw" /></figure>
+              <figure className="archive-slide slide-4"><Image src="/media/buried-back.png" alt="" fill sizes="28vw" /></figure>
+              <figure className="archive-slide slide-5"><Image src="/media/traitor-alt.png" alt="" fill sizes="28vw" /></figure>
+            </div>
+          </div>
+          <span className="archive-counter">02 stored drops</span>
+        </a>
       </section>
 
       <section className="manifesto" id="manifesto">
