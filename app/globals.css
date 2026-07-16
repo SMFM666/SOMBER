@@ -75,12 +75,12 @@ legend { margin-bottom:12px; font:500 10px var(--font-mono); text-transform:uppe
 .add-button span { font-size:20px; }
 .fine-print { margin:-24px 0 0; color:#67635c; font:400 9px/1.4 var(--font-mono); }
 .archive-section { padding:0; background:white; }
-.archive-gateway { min-height:760px; position:relative; overflow:hidden; color:var(--ink); border-top:1px solid var(--ink); border-bottom:1px solid var(--ink); }
+.archive-gateway { width:100%; max-width:100%; min-height:760px; position:relative; overflow:hidden; contain:layout paint; color:var(--ink); border-top:1px solid var(--ink); border-bottom:1px solid var(--ink); }
 .archive-gateway-copy { position:absolute; z-index:5; inset:56px clamp(24px,5vw,72px) auto; display:grid; grid-template-columns:1fr auto; align-items:start; pointer-events:none; }
 .archive-gateway-copy h2 { margin:0; font:400 clamp(64px,10vw,156px)/.78 var(--font-display); text-transform:uppercase; letter-spacing:-.035em; }
 .archive-gateway-copy>a { margin:12px 0 0; padding:0 0 8px; align-self:end; border-bottom:1px solid; color:inherit; pointer-events:auto; text-decoration:none; font:500 10px var(--font-mono); text-transform:uppercase; }
 .archive-gateway-copy>a span { margin-left:18px; }
-.archive-splide { position:absolute!important; inset:205px 0 58px; overflow:hidden!important; perspective:1400px; }
+.archive-splide { position:absolute!important; inset:205px 0 58px; width:100%; max-width:100%; overflow:hidden!important; perspective:1400px; }
 .archive-splide .splide__track { height:100%; overflow:visible; cursor:grab; -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 5%,#000 95%,transparent 100%); mask-image:linear-gradient(90deg,transparent 0,#000 5%,#000 95%,transparent 100%); }
 .archive-splide .splide__track:active { cursor:grabbing; }
 .archive-splide .splide__list { height:100%; align-items:center; }
