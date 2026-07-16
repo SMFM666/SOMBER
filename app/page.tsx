@@ -104,7 +104,9 @@ export default function Home() {
     <main>
       <header className="site-header">
         <a className="brand" href="#top" aria-label="SOMBER home">
-          <Image src="/media/logo.png" alt="SOMBER" width={220} height={45} priority />
+          <span className="brand-crop">
+            <Image className="brand-gif" src="/media/somber-nav.gif" alt="SOMBER" width={1526} height={584} unoptimized priority />
+          </span>
         </a>
         <nav className={menuOpen ? "nav-links open" : "nav-links"} aria-label="Primary navigation">
           <a href="#drop" onClick={() => setMenuOpen(false)}>Drop 001</a>
@@ -129,12 +131,9 @@ export default function Home() {
 
       <section className="hero" id="top">
         <div className="hero-copy">
-          <p className="eyebrow">Independent apparel / Drop 001</p>
           <h1>SOMBER</h1>
-          <p className="hero-title">CORRECTION</p>
           <a className="primary-link" href="#drop">Shop the drop <span>↓</span></a>
         </div>
-        <p className="edition-mark">50 copies. No restock.</p>
       </section>
 
       <section className="ticker" aria-label="Drop information">
@@ -143,9 +142,7 @@ export default function Home() {
 
       <section className="drop-section" id="drop">
         <div className="section-heading">
-          <p className="eyebrow">Current release</p>
           <h2>001 / Correction</h2>
-          <p>High-tolerance cotton. Low-tolerance design. Printed in a single numbered run.</p>
         </div>
 
         <div className="featured-product">
@@ -156,11 +153,9 @@ export default function Home() {
               fill
               sizes="(max-width: 800px) 100vw, 60vw"
             />
-            <span className="image-label">Back print / 001</span>
           </div>
           <div className="product-buy">
             <div>
-              <p className="stock"><span /> 49 / 50 remaining</p>
               <h3>Correction Tee</h3>
               <p className="price">$25.00</p>
             </div>
@@ -184,7 +179,6 @@ export default function Home() {
             <button className="add-button" type="button" onClick={() => addToCart(products[0])}>
               Add to cart <span>+</span>
             </button>
-            <p className="fine-print">Checkout will be enabled when the payment account is connected.</p>
           </div>
         </div>
       </section>
@@ -192,22 +186,16 @@ export default function Home() {
       <section className="archive-section" id="archive">
         <div className="archive-gateway">
           <div className="archive-gateway-copy">
-            <p className="eyebrow">Past releases / Permanent record</p>
             <h2>The archive</h2>
             <a href="/archive">Enter the complete record <span>↗</span></a>
           </div>
           <ArchiveSlider />
-          <span className="archive-counter">02 stored drops</span>
         </div>
       </section>
 
       <section className="manifesto" id="manifesto">
         <Image src="/media/icon.png" alt="SOMBER mark" width={180} height={72} />
-        <p className="eyebrow">What we make</p>
         <h2>Independent apparel for the part of you that stays after the noise leaves.</h2>
-        <div className="manifesto-notes">
-          <p>Small-run releases.</p><p>Original graphics.</p><p>No artificial scarcity.</p>
-        </div>
       </section>
 
       <footer>
