@@ -130,9 +130,21 @@ export default function Home() {
       </header>
 
       <section className="hero" id="top">
-        <div className="hero-copy">
-          <p>Upcoming</p>
-          <h1 aria-label="Upcoming mystery drop">???</h1>
+        <div className="hero-document" aria-label="Redacted notice for an upcoming SOMBER release">
+          <div className="document-head">
+            <p>SOMBER / Advance notice</p>
+            <p>Document 002</p>
+          </div>
+          <div className="document-title">
+            <h1>Incoming</h1>
+            <span className="redaction redaction-wide" aria-hidden="true" />
+          </div>
+          <dl className="document-fields">
+            <div><dt>Date</dt><dd><span className="redaction redaction-date" aria-label="Redacted" /></dd></div>
+            <div><dt>Subject</dt><dd><span className="redaction redaction-subject" aria-label="Redacted" /></dd></div>
+            <div><dt>Status</dt><dd>Withheld</dd></div>
+            <div><dt>Reference</dt><dd>SMB / 002</dd></div>
+          </dl>
         </div>
       </section>
 
