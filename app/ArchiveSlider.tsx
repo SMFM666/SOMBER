@@ -11,6 +11,11 @@ const slides = [
     label: "Pre-001 / Buried",
   },
   {
+    front: "/media/traitor-front.png",
+    alternate: "/media/traitor-back.png",
+    label: "Pre-001 / Traitor",
+  },
+  {
     front: "/media/001-front.png",
     alternate: "/media/001-back.png",
     label: "001 / Correction",
