@@ -202,7 +202,6 @@ export default function Home() {
       </section>
 
       <section className="manifesto" id="manifesto">
-        <Image src="/media/icon.png" alt="SOMBER mark" width={180} height={72} />
         <h2>Independent apparel for the part of you that stays after the noise leaves.</h2>
       </section>
 

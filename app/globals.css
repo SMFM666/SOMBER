@@ -118,7 +118,6 @@ legend { margin-bottom:12px; font:500 10px var(--font-mono); text-transform:uppe
 .archive-page-footer p { margin:0; }
 .archive-page-footer a { color:inherit; }
 .manifesto { padding:125px clamp(24px,7vw,110px); min-height:650px; display:flex; flex-direction:column; align-items:flex-start; justify-content:center; background:var(--ink); color:white; }
-.manifesto>img { filter:brightness(0) invert(1); width:150px; height:auto; margin-bottom:60px; }
 .manifesto h2 { max-width:1100px; font-size:clamp(40px,6.3vw,96px); }
 .manifesto-notes { width:100%; margin-top:75px; padding-top:18px; border-top:1px solid rgba(255,255,255,.5); display:grid; grid-template-columns:repeat(3,1fr); font:500 10px var(--font-mono); text-transform:uppercase; }
 footer { min-height:220px; padding:50px clamp(24px,5vw,72px); display:grid; grid-template-columns:1fr auto 1fr; align-items:end; background:var(--ink); color:white; }

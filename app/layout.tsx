@@ -11,7 +11,6 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://somber-made.com"),
   title: "SOMBER | Independent Streetwear & Limited Apparel Drops",
   description: "Small-run independent apparel. Original graphics, limited releases, no restocks.",
-  icons: { icon: "/media/icon.png", shortcut: "/media/icon.png" },
   openGraph: {
     type: "website",
     url: "https://somber-made.com/",
