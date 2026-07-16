@@ -19,14 +19,14 @@ export const metadata: Metadata = {
     title: "SOMBER / Advance Notice",
     description: "Details withheld.",
     images: [
-      { url: "/og.gif?v=3", width: 1200, height: 630, alt: "Animated SOMBER advance notice with redacted details", type: "image/gif" },
+      { url: "/og.gif?v=4", width: 1200, height: 630, alt: "Animated SOMBER advance notice with redacted details", type: "image/gif" },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title: "SOMBER / Advance Notice",
     description: "Details withheld.",
-    images: ["/og.png?v=3"],
+    images: ["/og.png?v=4"],
   },
 };
 
