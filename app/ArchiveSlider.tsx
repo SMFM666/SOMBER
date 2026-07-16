@@ -22,7 +22,7 @@ const slides = [
   },
   {
     front: "/media/001-front.png",
-    alternate: "/media/001-back.png",
+    alternate: "/media/correction-back-archive.png",
     label: "001 / Correction",
   },
 ];
