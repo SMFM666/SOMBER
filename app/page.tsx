@@ -131,13 +131,9 @@ export default function Home() {
 
       <section className="hero" id="top">
         <div className="hero-copy">
-          <h1>SOMBER</h1>
-          <a className="primary-link" href="#drop">Shop the drop <span>↓</span></a>
+          <p>Upcoming</p>
+          <h1 aria-label="Upcoming mystery drop">???</h1>
         </div>
-      </section>
-
-      <section className="ticker" aria-label="Drop information">
-        <div>DROP 001&nbsp;&nbsp; / &nbsp;&nbsp;CORRECTION&nbsp;&nbsp; / &nbsp;&nbsp;LIMIT 50 TO PRESS&nbsp;&nbsp; / &nbsp;&nbsp;OUT NOW</div>
       </section>
 
       <section className="drop-section" id="drop">
