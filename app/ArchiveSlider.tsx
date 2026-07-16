@@ -16,6 +16,11 @@ const slides = [
     label: "Pre-001 / Traitor",
   },
   {
+    front: "/media/willbedone-front.png",
+    alternate: "/media/willbedone-back.png",
+    label: "Pre-001 / WILLbedone",
+  },
+  {
     front: "/media/001-front.png",
     alternate: "/media/001-back.png",
     label: "001 / Correction",
