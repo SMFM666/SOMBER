@@ -6,6 +6,11 @@ import Glide from "@glidejs/glide";
 
 const slides = [
   {
+    front: "/media/buried-front.png",
+    alternate: "/media/buried-back.png",
+    label: "Pre-001 / Buried",
+  },
+  {
     front: "/media/001-front.png",
     alternate: "/media/001-back.png",
     label: "001 / Correction",
