@@ -5,9 +5,11 @@ import { useEffect, useRef } from "react";
 import Glide from "@glidejs/glide";
 
 const slides = [
-  { src: "/media/001-front.png", label: "001 / Correction / Front" },
-  { src: "/media/001-back.png", label: "001 / Correction / Back" },
-  { src: "/media/ad-001.png", label: "001 / Correction / Campaign" },
+  {
+    front: "/media/001-front.png",
+    alternate: "/media/001-back.png",
+    label: "001 / Correction",
+  },
 ];
 
 export default function ArchiveSlider() {
@@ -17,7 +19,8 @@ export default function ArchiveSlider() {
     if (!rootRef.current) return;
 
     const glide = new Glide(rootRef.current, {
-      type: "carousel",
+      type: "slider",
+      rewind: true,
       startAt: 0,
       perView: 3,
       focusAt: "center",
@@ -48,13 +51,10 @@ export default function ArchiveSlider() {
       <div className="glide__track" data-glide-el="track">
         <ul className="glide__slides">
           {slides.map((slide, index) => (
-            <li className={`glide__slide${slide.src ? "" : " is-empty"}`} key={`${slide.label}-${index}`}>
+            <li className="glide__slide" key={`${slide.label}-${index}`}>
               <a className="archive-panel" href="/archive">
-                {slide.src ? (
-                  <Image src={slide.src} alt={slide.label} fill sizes="(max-width: 700px) 72vw, 30vw" />
-                ) : (
-                  <span className="empty-panel-mark" aria-hidden="true">+</span>
-                )}
+                <Image className="archive-image archive-image-front" src={slide.front} alt={`${slide.label} front`} fill sizes="(max-width: 600px) 78vw, (max-width: 900px) 46vw, 30vw" />
+                <Image className="archive-image archive-image-alternate" src={slide.alternate} alt={`${slide.label} back`} fill sizes="(max-width: 600px) 78vw, (max-width: 900px) 46vw, 30vw" />
                 <span>{slide.label}</span>
               </a>
             </li>
