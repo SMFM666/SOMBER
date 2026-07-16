@@ -12,7 +12,7 @@ const slides = [
   },
   {
     front: "/media/traitor-front.png",
-    alternate: "/media/traitor-back.png",
+    alternate: "/media/traitor-back-archive.png",
     label: "Pre-001 / Traitor",
   },
   {
