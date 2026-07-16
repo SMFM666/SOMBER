@@ -5,15 +5,9 @@ import { useEffect, useRef } from "react";
 import Glide from "@glidejs/glide";
 
 const slides = [
-  { src: "/media/traitor-front.png", label: "Traitor / Front" },
-  { src: "/media/traitor-back.png", label: "Traitor / Back" },
-  { src: "/media/buried-front.png", label: "Buried / Front" },
-  { src: "/media/buried-back.png", label: "Buried / Back" },
-  { src: "/media/traitor-alt.png", label: "Traitor / Detail" },
-  { src: null, label: "Unassigned / 003" },
-  { src: null, label: "Unassigned / 004" },
-  { src: null, label: "Unassigned / 005" },
-  { src: null, label: "Unassigned / 006" },
+  { src: "/media/001-front.png", label: "001 / Correction / Front" },
+  { src: "/media/001-back.png", label: "001 / Correction / Back" },
+  { src: "/media/ad-001.png", label: "001 / Correction / Campaign" },
 ];
 
 export default function ArchiveSlider() {
