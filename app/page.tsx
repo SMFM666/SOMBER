@@ -109,8 +109,7 @@ export default function Home() {
           </span>
         </a>
         <nav className={menuOpen ? "nav-links open" : "nav-links"} aria-label="Primary navigation">
-          <a href="#drop" onClick={() => setMenuOpen(false)}>Drop 001</a>
-          <a href="#archive" onClick={() => setMenuOpen(false)}>Archive</a>
+          <a href="/archive" onClick={() => setMenuOpen(false)}>Archive</a>
           <a href="#manifesto" onClick={() => setMenuOpen(false)}>Manifesto</a>
         </nav>
         <div className="header-actions">
