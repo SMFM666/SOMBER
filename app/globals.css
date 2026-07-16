@@ -88,10 +88,10 @@ legend { margin-bottom:12px; font:500 10px var(--font-mono); text-transform:uppe
 .archive-glide .glide__slide--active { z-index:2; opacity:1; transform:scale(1); }
 .archive-panel { position:relative; display:block; width:100%; height:100%; overflow:hidden; border:3px solid var(--ink); background:#e8e8e8; color:var(--ink); text-decoration:none; }
 .archive-panel .archive-image { object-fit:cover; object-position:center; padding:0; filter:grayscale(1); transition:opacity .45s ease,filter .35s ease,transform .55s cubic-bezier(.2,.7,.2,1); }
-.archive-panel .archive-image-front { opacity:1; }
-.archive-panel .archive-image-alternate { opacity:0; }
-.archive-panel:hover .archive-image-front { opacity:0; transform:scale(1.025); }
-.archive-panel:hover .archive-image-alternate { opacity:1; filter:grayscale(0); transform:scale(1.025); }
+.archive-panel .archive-image-default { opacity:1; }
+.archive-panel .archive-image-hover { opacity:0; }
+.archive-panel:hover .archive-image-default { opacity:0; transform:scale(1.025); }
+.archive-panel:hover .archive-image-hover { opacity:1; filter:grayscale(0); transform:scale(1.025); }
 .archive-panel span { position:absolute; z-index:2; left:12px; bottom:10px; padding:5px 7px; background:#fff; border:1px solid var(--ink); font:500 8px var(--font-mono); text-transform:uppercase; }
 .archive-panel .empty-panel-mark { inset:50% auto auto 50%; bottom:auto; left:50%; padding:0; transform:translate(-50%,-50%); border:0; background:transparent; color:#b4b4b4; font:300 clamp(72px,9vw,150px)/1 var(--font-sans); }
 .archive-glide .is-empty .archive-panel { background:repeating-linear-gradient(135deg,#ededed 0,#ededed 12px,#e5e5e5 12px,#e5e5e5 13px); }

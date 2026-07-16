@@ -68,8 +68,8 @@ export default function ArchiveSlider() {
           {slides.map((slide, index) => (
             <li className="glide__slide" key={`${slide.label}-${index}`}>
               <a className="archive-panel" href="/archive">
-                <Image className="archive-image archive-image-front" src={slide.front} alt={`${slide.label} front`} fill sizes="(max-width: 600px) 78vw, (max-width: 900px) 46vw, 30vw" />
-                <Image className="archive-image archive-image-alternate" src={slide.alternate} alt={`${slide.label} back`} fill sizes="(max-width: 600px) 78vw, (max-width: 900px) 46vw, 30vw" />
+                <Image className="archive-image archive-image-default" src={slide.alternate} alt={`${slide.label} back`} fill sizes="(max-width: 600px) 78vw, (max-width: 900px) 46vw, 30vw" />
+                <Image className="archive-image archive-image-hover" src={slide.front} alt={`${slide.label} front`} fill sizes="(max-width: 600px) 78vw, (max-width: 900px) 46vw, 30vw" />
                 <span>{slide.label}</span>
               </a>
             </li>
