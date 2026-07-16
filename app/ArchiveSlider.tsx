@@ -2,8 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useRef } from "react";
-import { Splide } from "@splidejs/splide";
-import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
+import Glide from "@glidejs/glide";
 
 const slides = [
   { src: "/media/traitor-front.png", label: "Traitor / Front" },
@@ -18,75 +17,44 @@ const slides = [
 ];
 
 export default function ArchiveSlider() {
-  const rootRef = useRef<HTMLElement>(null);
+  const rootRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!rootRef.current) return;
 
-    const splide = new Splide(rootRef.current, {
-      type: "loop",
-      autoWidth: true,
-      focus: "center",
-      drag: "free",
-      snap: false,
-      gap: "0px",
-      arrows: false,
-      pagination: false,
-      wheel: true,
-      wheelSleep: 90,
-      releaseWheel: false,
-      waitForTransition: false,
-      autoScroll: {
-        speed: 0.45,
-        pauseOnHover: false,
-        pauseOnFocus: true,
+    const glide = new Glide(rootRef.current, {
+      type: "carousel",
+      startAt: 0,
+      perView: 3,
+      focusAt: "center",
+      gap: 18,
+      autoplay: 2600,
+      hoverpause: true,
+      animationDuration: 850,
+      animationTimingFunc: "cubic-bezier(.2,.7,.2,1)",
+      keyboard: true,
+      swipeThreshold: 40,
+      dragThreshold: 70,
+      peek: { before: 80, after: 80 },
+      breakpoints: {
+        900: { perView: 2, gap: 14, peek: { before: 32, after: 32 } },
+        600: { perView: 1, gap: 12, peek: { before: 42, after: 42 } },
       },
     });
 
-    splide.mount({ AutoScroll });
-
-    const root = rootRef.current;
-    let lastSpeed = 0.45;
-
-    const setSpeed = (speed: number) => {
-      if (Math.abs(speed - lastSpeed) < 0.08) return;
-      lastSpeed = speed;
-      splide.options = {
-        autoScroll: {
-          speed,
-          pauseOnHover: false,
-          pauseOnFocus: true,
-        },
-      };
-    };
-
-    const steer = (event: PointerEvent) => {
-      if (event.pointerType === "touch") return;
-      const bounds = root.getBoundingClientRect();
-      const position = (event.clientX - bounds.left) / bounds.width;
-      const distanceFromCenter = Math.abs(position - 0.5) * 2;
-      if (distanceFromCenter < 0.08) return setSpeed(0.12);
-      const magnitude = 0.35 + distanceFromCenter * 1.1;
-      setSpeed(position < 0.5 ? -magnitude : magnitude);
-    };
-
-    const resetDirection = () => setSpeed(0.45);
-    root.addEventListener("pointermove", steer);
-    root.addEventListener("pointerleave", resetDirection);
+    glide.mount();
 
     return () => {
-      root.removeEventListener("pointermove", steer);
-      root.removeEventListener("pointerleave", resetDirection);
-      splide.destroy();
+      glide.destroy();
     };
   }, []);
 
   return (
-    <section className="splide archive-splide" ref={rootRef} aria-label="Archived release previews">
-      <div className="splide__track">
-        <ul className="splide__list">
+    <div className="glide archive-glide" ref={rootRef} aria-label="Archived release previews">
+      <div className="glide__track" data-glide-el="track">
+        <ul className="glide__slides">
           {slides.map((slide, index) => (
-            <li className={`splide__slide${slide.src ? "" : " is-empty"}`} key={`${slide.label}-${index}`}>
+            <li className={`glide__slide${slide.src ? "" : " is-empty"}`} key={`${slide.label}-${index}`}>
               <a className="archive-panel" href="/archive">
                 {slide.src ? (
                   <Image src={slide.src} alt={slide.label} fill sizes="(max-width: 700px) 72vw, 30vw" />
@@ -99,6 +67,6 @@ export default function ArchiveSlider() {
           ))}
         </ul>
       </div>
-    </section>
+    </div>
   );
 }

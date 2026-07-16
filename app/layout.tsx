@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Archivo_Black, IBM_Plex_Mono, Inter } from "next/font/google";
-import "@splidejs/splide/css/core";
+import "@glidejs/glide/dist/css/glide.core.min.css";
 import "./globals.css";
 
 const display = Archivo_Black({ weight: "400", subsets: ["latin"], variable: "--font-display" });
