@@ -136,8 +136,9 @@ export default function Home() {
             <p>Document 002</p>
           </div>
           <div className="document-title">
+            <span className="redaction redaction-rule" aria-hidden="true" />
             <h1>Incoming</h1>
-            <span className="redaction redaction-wide" aria-hidden="true" />
+            <span className="redaction redaction-rule" aria-hidden="true" />
           </div>
           <dl className="document-fields">
             <div><dt>Date</dt><dd><span className="redaction redaction-date" aria-label="Redacted" /></dd></div>
