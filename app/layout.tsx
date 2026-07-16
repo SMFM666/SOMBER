@@ -16,17 +16,17 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://somber-made.com/",
     siteName: "SOMBER",
-    title: "SOMBER / Independent Apparel",
-    description: "Small runs. Original graphics. No restocks.",
+    title: "SOMBER / Advance Notice",
+    description: "Details withheld.",
     images: [
-      { url: "/og.gif", width: 1200, height: 630, alt: "Animated SOMBER identity and apparel archive", type: "image/gif" },
+      { url: "/og.gif?v=3", width: 1200, height: 630, alt: "Animated SOMBER advance notice with redacted details", type: "image/gif" },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "SOMBER / Independent Apparel",
-    description: "Small runs. Original graphics. No restocks.",
-    images: ["/og.png"],
+    title: "SOMBER / Advance Notice",
+    description: "Details withheld.",
+    images: ["/og.png?v=3"],
   },
 };
 
