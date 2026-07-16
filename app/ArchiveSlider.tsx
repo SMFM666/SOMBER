@@ -7,7 +7,7 @@ import Glide from "@glidejs/glide";
 const slides = [
   {
     front: "/media/buried-front.png",
-    alternate: "/media/buried-back.png",
+    alternate: "/media/buried-back-archive.png",
     label: "Pre-001 / Buried",
   },
   {
@@ -17,7 +17,7 @@ const slides = [
   },
   {
     front: "/media/willbedone-front.png",
-    alternate: "/media/willbedone-back.png",
+    alternate: "/media/willbedone-back-archive.png",
     label: "Pre-001 / WILLbedone",
   },
   {
